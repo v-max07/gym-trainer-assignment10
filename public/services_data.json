@@ -2,7 +2,7 @@
     {
         "_id": 1,
         "name": "Yoga Class",
-        "description": "",
+        "description": "The term 'yoga' in the Western world often denotes a modern form of Hath yoga and a posture-based physical fitness technique, ...",
         "image": "https://i.ibb.co/KG07KPH/yoga.jpg",
         "price": 122
     },
@@ -10,14 +10,14 @@
         "_id": 2,
         "name": "Body Building",
         "image": "https://i.ibb.co/ZcNgv8s/classes1.jpg",
-        "description": "",
+        "description": "Bodybuilding is the use contro and develop one's aesthetic purposes. Highest governing body: International Feder..",
         "price": 145
     },
     {
         "_id": 3,
         "name": "Weight Lifting Class",
         "image": "https://i.ibb.co/c1r1XCg/classes2.jpg",
-        "description": "",
+        "description": "Weight training is also known as resistance or strength training. It involves moving parts of your body  like weights, ...",
         "price": 163
     }
 

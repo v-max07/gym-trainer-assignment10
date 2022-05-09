@@ -1,9 +1,25 @@
 .serviceItem{
     width: 300px;
-    height: 500px;
+    height: 530px;
     border-radius: 7px;
     box-shadow: 1px 1px 16px 2px #f36f21;
 }
-.serviceItemDiv{
+.serviceItem span{
+    color: #dd590d;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
 
+.pursesBtn{
+    padding: 10px 24px;
+    background-color: #f36f21;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    border: 0;
+    margin-top: 15px;
+}
+.pursesBtn:hover{
+    background-color: #dd590d;
 }

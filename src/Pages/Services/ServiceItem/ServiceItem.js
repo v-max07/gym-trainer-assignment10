@@ -1,7 +1,7 @@
 import React from 'react';
 import './ServiceItem.css';
 
-const Serviceservice = ({ service }) => {
+const ServiceItem = ({ service }) => {
     const { _id, name, image, description, price } = service;
     return (
         <div className='col-sm-12 col-md-3 my-2 serviceItemDiv'>
@@ -9,13 +9,13 @@ const Serviceservice = ({ service }) => {
                 <img className='w-100 h-50' src={image} alt="" />
                 <div className='mt-2'>
                     <h3> {name} </h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, optio!</p>
-                    <span>${price} </span>
-                    <button className='d-block'>Purses</button>
+                    <p> {description} </p>
+                    <p>Price: <span>${price} </span></p>
+                    <button className='d-block pursesBtn'>Purses</button>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Serviceservice;
+export default ServiceItem;
