@@ -1,0 +1,25 @@
+[
+    {
+        "_id": 1,
+        "name": "Yoga Class",
+        "description": "",
+        "image": "https://i.ibb.co/KG07KPH/yoga.jpg",
+        "price": 122
+    },
+    {
+        "_id": 2,
+        "name": "Body Building",
+        "image": "https://i.ibb.co/ZcNgv8s/classes1.jpg",
+        "description": "",
+        "price": 145
+    },
+    {
+        "_id": 3,
+        "name": "Weight Lifting Class",
+        "image": "https://i.ibb.co/c1r1XCg/classes2.jpg",
+        "description": "",
+        "price": 163
+    }
+
+
+]

@@ -1,0 +1,10 @@
+.gymClass>img{
+    border: 6px solid #f36f21;
+}
+.ourClass{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-evenly;
+    padding-top: 55px;
+    text-align: center;
+}

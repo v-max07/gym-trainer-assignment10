@@ -1,0 +1,11 @@
+
+.carousel-caption{
+    height: 650px;
+}
+.carousel-caption .caption-heading{
+    font-size: 80px;
+    color: #f36f21;
+}
+.carousel-caption .caption-line{
+    font-size: 18px;
+}

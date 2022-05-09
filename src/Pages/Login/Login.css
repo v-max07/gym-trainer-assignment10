@@ -1,0 +1,36 @@
+.loginTitle{
+    text-align: center;
+    color: #f36f21;
+}
+
+.loginForm{
+    background-color: aliceblue;
+    padding: 40px 20px;
+    border-radius: 10px;
+}
+
+.loginForm button{
+    margin-top: 40px;
+    background-color: #f36f21;
+}
+
+.loginForm button:hover{
+    background-color: #de5607;
+}
+.firstDiv, .secondDiv{
+    height: 1px;
+    background-color: rgb(0, 0, 0);
+    width: 25%;
+}
+
+.orClass{
+    margin-top: 11px;
+}
+
+.linkButton>button{
+    border-radius: 20px;
+    padding: 5px 20px;
+    margin: 0 5px;
+    background-color: #fff;
+    border: 1px solid #f36f21;
+}
