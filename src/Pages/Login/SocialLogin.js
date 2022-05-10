@@ -33,9 +33,9 @@ const SocialLogin = () => {
                 </div>
             </div>
             <div className='linkButton'>
-                <button onClick={signInWithGoogle}> <img src={Google} alt="" /> Google</button>
-                <button onClick={signInWithFacebook}> <img src={Facebook} alt="" /> Google</button>
-                <button onClick={signInWithGithub}> <img src={Github} alt="" /> Google</button>
+                <button onClick={()=>signInWithGoogle()}> <img src={Google} alt="" /> Google</button>
+                <button onClick={()=>signInWithFacebook()}> <img src={Facebook} alt="" /> Google</button>
+                <button onClick={()=>signInWithGithub()}> <img src={Github} alt="" /> Google</button>
             </div>
         </div>
     );

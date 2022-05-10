@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
@@ -10,6 +10,7 @@ import auth from '../../firebase.init';
 import SocialLogin from '../Login/SocialLogin';
 
 const Register = () => {
+    const [checked, setChecked] = useState(false);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -28,8 +29,8 @@ const Register = () => {
         const email = e.target.email.value;
         const userName = e.target.username.value;
         const password = e.target.password.value;
+        // const checkedTerms = e.target.terms.checked;
 
-        console.log(email, password);
         await createUserWithEmailAndPassword(email, password);
 
     }
@@ -53,10 +54,10 @@ const Register = () => {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label=" I accept the Terms of Use &amp; Privacy Policy" />
+                        <Form.Check onClick={() => setChecked(!checked)} type="checkbox" name='terms' id='terms' label=" I accept the Terms of Use &amp; Privacy Policy" />
                     </Form.Group>
 
-                    <Button className='d-block w-100 py-3 fw-bold' type="submit">
+                    <Button disabled={!checked} className='d-block w-100 py-3 fw-bold' type="submit">
                         Register Now
                     </Button>
                     <p className='mt-2'>Already have an account? <Link style={{ color: '#f36f21', textDecoration: 'none' }} to='/login'>Login</Link> </p>
