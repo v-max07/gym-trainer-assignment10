@@ -7,6 +7,7 @@ import Facebook from '../../images/linkIcon/icons8-facebook-48.png';
 import Github from '../../images/linkIcon/icons8-github-45.png';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import SocialLogin from '../Login/SocialLogin';
 
 const Register = () => {
     const [
@@ -60,19 +61,7 @@ const Register = () => {
                     </Button>
                     <p className='mt-2'>Already have an account? <Link style={{ color: '#f36f21', textDecoration: 'none' }} to='/login'>Login</Link> </p>
                 </Form>
-                <div className='mt-5'>
-                    <div className='d-flex justify-content-center align-items-center'>
-                        <div className='firstDiv'></div>
-                        <p className='mx-3 orClass'>Or</p>
-                        <div className='secondDiv'></div>
-                    </div>
-                </div>
-
-                <div className='linkButton'>
-                    <button> <img src={Google} alt="" /> Google</button>
-                    <button> <img src={Facebook} alt="" /> Google</button>
-                    <button> <img src={Github} alt="" /> Google</button>
-                </div>
+                <SocialLogin></SocialLogin>
             </div>
         </div>
     );

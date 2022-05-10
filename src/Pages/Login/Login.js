@@ -2,11 +2,9 @@ import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
-import Google from '../../images/linkIcon/icons8-google-48.png';
-import Facebook from '../../images/linkIcon/icons8-facebook-48.png';
-import Github from '../../images/linkIcon/icons8-github-45.png';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import SocialLogin from './SocialLogin';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -34,6 +32,7 @@ const Login = () => {
 
         signInWithEmailAndPassword(email, password);      
     }
+    
     return (
         <div className='row'>
             <div className='loginForm col-md-4 col-sm-12 mx-auto my-5 px-4'>
@@ -51,21 +50,9 @@ const Login = () => {
                     </Button>
                     <p className='mt-2 '>Don't have an account? <Link style={{ color: '#f36f21', textDecoration: 'none' }} to='/register'>SignUp</Link> </p>
                 </Form>
-                <div className='mt-5'>
-                    <div className='d-flex justify-content-center align-items-center'>
-                        <div className='firstDiv'></div>
-                        <p className='mx-3 orClass'>Or</p>
-                        <div className='secondDiv'></div>
-                    </div>
-                </div>
-
-                <div className='linkButton'>
-                    <button> <img src={Google} alt="" /> Google</button>
-                    <button> <img src={Facebook} alt="" /> Google</button>
-                    <button> <img src={Github} alt="" /> Google</button>
-                </div>
-            </div>
-            
+                
+                <SocialLogin></SocialLogin>
+            </div> 
         </div>
     );
 };
