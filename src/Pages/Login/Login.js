@@ -5,6 +5,7 @@ import './Login.css';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import SocialLogin from './SocialLogin';
+import Loading from '../Shared/Loading/Loading';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -18,10 +19,14 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-//------------------for require Auth or protected page ----------------------
+//------------------for require Auth or protected page and loading ----------------------
     const from = location.state?.from?.pathname || "/";
     if (user) {
         navigate(from, { replace: true });
+    }
+
+    if (loading) {
+        return <Loading></Loading>;
     }
 
 //``````````````Handle Login Page`````````````````

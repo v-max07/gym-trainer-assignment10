@@ -8,6 +8,7 @@ import Github from '../../images/linkIcon/icons8-github-45.png';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import SocialLogin from '../Login/SocialLogin';
+import Loading from '../Shared/Loading/Loading';
 
 const Register = () => {
     const [checked, setChecked] = useState(false);
@@ -17,12 +18,15 @@ const Register = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
-
+    
     const navigate = useNavigate();
-
     if (user) {
         navigate('/home');
     }
+    if (loading) {
+        return <Loading></Loading>;
+    }
+
     const handleRegister = async e => {
         e.preventDefault();
         const name = e.target.name.value;
