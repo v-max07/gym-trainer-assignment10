@@ -1,11 +1,11 @@
 import React from 'react';
-import Scarecrow from '../../Assets/notFoundPicture/Scarecrow.png'
+import Scarecrow from '../../images/notFoundPicture/Scarecrow.png'
 import { Link } from 'react-router-dom';
 import './NotFound.css'
 
 const NotFound = () => {
     return (
-        <div className='wrapper'>
+        <div className='wrapper pt-5'>
             <header className='header'>
                 <h1 className='header-title'>
                     404 Not Found
