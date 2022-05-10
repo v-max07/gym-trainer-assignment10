@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css';
 import Google from '../../images/linkIcon/icons8-google-48.png';
 import Facebook from '../../images/linkIcon/icons8-facebook-48.png';
@@ -11,7 +11,8 @@ import auth from '../../firebase.init';
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
-
+    const location = useLocation();
+    const navigate = useNavigate();
     const [
         signInWithEmailAndPassword,
         user,
@@ -19,19 +20,19 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const navigate = useNavigate();
+//------------------for require Auth or protected page ----------------------
+    const from = location.state?.from?.pathname || "/";
     if (user) {
-        navigate('/home');
+        navigate(from, { replace: true });
     }
 
+//``````````````Handle Login Page`````````````````
     const handleLogin = e => {
         e.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        signInWithEmailAndPassword(email, password);
-
-        console.log(email, password);
+        signInWithEmailAndPassword(email, password);      
     }
     return (
         <div className='row'>
