@@ -1,19 +1,35 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import Google from '../../images/linkIcon/icons8-google-48.png';
 import Facebook from '../../images/linkIcon/icons8-facebook-48.png';
 import Github from '../../images/linkIcon/icons8-github-45.png';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
 
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    const navigate = useNavigate();
+    if (user) {
+        navigate('/home');
+    }
+
     const handleLogin = e => {
         e.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
+
+        signInWithEmailAndPassword(email, password);
 
         console.log(email, password);
     }

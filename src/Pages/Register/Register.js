@@ -1,21 +1,36 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
 import Google from '../../images/linkIcon/icons8-google-48.png';
 import Facebook from '../../images/linkIcon/icons8-facebook-48.png';
 import Github from '../../images/linkIcon/icons8-github-45.png';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Register = () => {
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
-    const handleRegister = e => {
+    const navigate = useNavigate();
+
+    if (user) {
+        navigate('/home');
+    }
+    const handleRegister = async e => {
         e.preventDefault();
         const name = e.target.name.value;
         const email = e.target.email.value;
         const userName = e.target.username.value;
         const password = e.target.password.value;
 
-        console.log(name, email, userName, password);
+        console.log(email, password);
+        await createUserWithEmailAndPassword(email, password);
+
     }
     return (
         <div className='row'>
