@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Login.css';
@@ -7,17 +7,27 @@ import Facebook from '../../images/linkIcon/icons8-facebook-48.png';
 import Github from '../../images/linkIcon/icons8-github-45.png';
 
 const Login = () => {
+    const emailRef = useRef('');
+    const passwordRef = useRef('');
+
+    const handleLogin = e => {
+        e.preventDefault();
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
+
+        console.log(email, password);
+    }
     return (
         <div className='row'>
             <div className='loginForm col-md-4 col-sm-12 mx-auto my-5 px-4'>
-                <Form >
+                <Form onSubmit={handleLogin}>
                     <h2 className='loginTitle mb-4'>Login</h2>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control className='py-3' type="email" placeholder="Enter your email" required />
+                        <Form.Control ref={emailRef} className='py-3' type="email" placeholder="Enter your email" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control className='py-3' type="password" placeholder="Enter your Password" required />
+                        <Form.Control ref={passwordRef} className='py-3' type="password" placeholder="Enter your Password" required />
                     </Form.Group>
                     <Button className='d-block w-100 py-3 fw-bold' type="submit">
                         Submit

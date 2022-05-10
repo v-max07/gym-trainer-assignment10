@@ -7,23 +7,33 @@ import Facebook from '../../images/linkIcon/icons8-facebook-48.png';
 import Github from '../../images/linkIcon/icons8-github-45.png';
 
 const Register = () => {
+
+    const handleRegister = e => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const userName = e.target.username.value;
+        const password = e.target.password.value;
+
+        console.log(name, email, userName, password);
+    }
     return (
         <div className='row'>
             <div className='loginForm col-md-4 col-sm-12 mx-auto my-5 px-4'>
-                <Form>
+                <Form onSubmit={handleRegister}>
                     <h2 className='loginTitle mb-4'>Register</h2>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control className='py-3' type="name" placeholder="Full Name" required />
+                        <Form.Control className='py-3' type="name" name='name' id='' placeholder="Full Name" required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control className='py-3' type="userName" placeholder="User Name" required />
+                        <Form.Control className='py-3' type="userName" name='username' id='' placeholder="User Name" required />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Control className='py-3' type="email" placeholder="Enter your email" required />
+                        <Form.Control className='py-3' type="email" name='email' id='' placeholder="Enter your email" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Control className='py-3' type="password" placeholder="Enter your Password" required />
+                        <Form.Control className='py-3' type="password" name='password' id='' placeholder="Enter your Password" required />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
